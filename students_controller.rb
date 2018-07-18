@@ -33,5 +33,10 @@ get '/students/:id/edit' do
   erb :edit
 end
 # update
+post '/students/:id' do
+  student = Student.new(params)
+  student.update
+  redirect to "students/#{params['id']}"
+end
 
 # destroy
