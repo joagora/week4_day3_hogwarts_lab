@@ -11,8 +11,15 @@ get '/students' do
 end
 # new
 get '/students/new' do
-  @houses = ["Slitherin", "Ravenclaw", "Griffindor", "Hufflepuff"]
+  @houses = House.all
   erb :new
+end
+
+# create
+post '/students' do
+  @student = Student.new(params)
+  @student.save
+  erb :create
 end
 # show
 get '/students/:id' do
@@ -20,8 +27,6 @@ get '/students/:id' do
   erb :show
 end
 
-
-# create
 
 # edit
 

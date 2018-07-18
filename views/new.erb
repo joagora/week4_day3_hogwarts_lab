@@ -1,22 +1,18 @@
-<ul>
-  <li>
+<form class = "registration" action = "/students" method = "post">
     <label for="first-name">First name</label>
     <input id = "first-name" type="text" name= "first_name">
-  </li>
-  <li>
+
     <label for="last-name">Last name</label>
     <input id = "last-name" type="text" name= "last_name">
-  </li>
-  <li>
+
     <label for="age">Age</label>
     <input id = "age" type="number" name= "age">
-  </li>
-  <li>
+
     <label for="house_select">Select House:</label>
     <select name="house_id" id="house_select">
       <% for house in @houses %>
-      <option value="<%= house %>"><%= house %></option>
+      <option value="<%= house.id %>"><%= house.name.capitalize %></option>
       <% end %>
     </select>
-  </li>
-</ul>
+    <input type="submit" value="REGISTER">
+</form>
