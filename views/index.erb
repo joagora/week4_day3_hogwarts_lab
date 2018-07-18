@@ -1,0 +1,6 @@
+<h1>Hello students! Below you will find the list of students</h1>
+<% for student in @students %>
+  <p>Name: <%= student.format_name %></p>
+  <p>Age: <%= student.age %></p>
+  <p>House: <%= student.house.name.capitalize %></p>
+<% end %>
