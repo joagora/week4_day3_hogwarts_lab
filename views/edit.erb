@@ -1,18 +1,18 @@
 <h1>Edit registration form</h1>
 <form class = "registration" action = "/students/<%= @student.id %>" method = "post">
     <label for="first-name">First name</label>
-    <input id = "first-name" type="text" name= "first_name" value = "<%@student.first_name%>" >
+    <input id = "first-name" type="text" name= "first_name" value = "<%=@student.first_name%>">
 
     <label for="last-name">Last name</label>
-    <input id = "last-name" type="text" name= "last_name">
+    <input id = "last-name" type="text" name= "last_name" value = "<%=@student.last_name%>">
 
     <label for="age">Age</label>
-    <input id = "age" type="number" name= "age">
+    <input id = "age" type="number" name= "age" value = "<%= @student.age%>">
 
     <label for="house_select">Select House:</label>
     <select name="house_id" id="house_select">
       <% for house in @houses %>
-      <option value="<%= house.id %>"><%= house.name.capitalize %></option>
+      <option value="<%= house.id %>" <%= 'selected' if @student.house.id == house.id %> ><%=house.name%></option>
       <% end %>
     </select>
     <input type="submit" value="UPDATE">
