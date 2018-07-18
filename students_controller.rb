@@ -26,10 +26,12 @@ get '/students/:id' do
   @student = Student.find(params['id'])
   erb :show
 end
-
-
 # edit
-
+get '/students/:id/edit' do
+  @houses = House.all
+  @student = Student.find(params['id'])
+  erb :edit
+end
 # update
 
 # destroy
