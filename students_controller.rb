@@ -8,10 +8,12 @@ also_reload('./models/*')
 get '/students' do
   @students = Student.all
   erb :index
-
 end
 # show
-
+get '/students/:id' do
+  @student = Student.find(params['id'])
+  erb :show
+end
 # new
 get '/students/new' do
   @houses = ["Slitherin", "Ravenclaw", "Griffindor", "Hufflepuff"]
